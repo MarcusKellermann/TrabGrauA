@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Codificação de Textos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Codificador de Textos</h1>
+    
+    <textarea id="input" placeholder="Digite o texto..."></textarea>
+    
+    <select id="method">
+      <option value="golomb">Golomb</option>
+      <option value="elias">Elias-Gamma</option>
+      <option value="fibonacci">Fibonacci</option>
+      <option value="huffman">Huffman</option>
+    </select>
+    
+    <div class="buttons">
+      <button onclick="codificar()">Codificar</button>
+      <button onclick="decodificar()">Decodificar</button>
+    </div>
+    
+    <h2>Resultado:</h2>
+    <pre id="output"></pre>
+
+    <h2 id="tree-title" style="display:none;">Árvore de Huffman:</h2>
+    <div id="huffman-tree"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
