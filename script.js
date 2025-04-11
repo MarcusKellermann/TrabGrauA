@@ -12,7 +12,7 @@ const Golomb = {
   decode(code, m = DIVISOR) {
     let i = 0, q = 0;
     while (code[i++] === "0") q++; // conta todos os 0s
-    const r = parseInt(code.slice(i, i + BINARY_LENGTH), 2); //vai converter os proximos 3 bits em numero inteiro
+    const r = parseInt(code.slice(i, i + BINARY_LENGTH), 2); //vai ler os proximos 3 bits e depois converter para numero inteiro
     return q * m + r; // retorna o numero inteiro
   },
 
@@ -27,7 +27,7 @@ const Golomb = {
       while (encoded[i] === "0") { q++; i++; }// conta quantos 0s tem
       i++; 
       const r = parseInt(encoded.slice(i, i + BINARY_LENGTH), 2);// le os proximos 3 bits
-      decoded += String.fromCharCode(q * DIVISOR + r);// relcalcula o codigo ASCII e converte em caractere
+      decoded += String.fromCharCode(q * DIVISOR + r);// relcalcula o codigo ASCII 
       i += BINARY_LENGTH;
     }
     return decoded;
